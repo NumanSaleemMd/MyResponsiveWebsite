@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Finance Helper</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+body  {
+  background-color: #cccccc;
+}
+
+      </style>
+  </head>
+<body>
+    <div class='backimage'>
+    <h1 class='well'>Converter</h1>
+    <h4 class='well'>currency is a generally accepted form of money, including coins and paper notes, which is issued by a government and circulated within an economy.<br> Used as a medium of exchange for goods and services, currency is the basis for trade. </h4>
+<script>
+function Convert(){
+    let number=document.getElementById('Money');
+    let unit=document.getElementById('unitPer');
+     let msg=document.getElementById('display');
+    let re=/[0-9.]+/;
+    if(!re.test(number.value) || !re.test(unit.value)){
+msg.innerHTML="<h1 class='well'>Enter Correct Values</h1>";
+        return false;
+    }else{
+        msg.innerHTML="<p class='well'>Convert Values "+(parseFloat(number.value)*parseFloat(unit.value))+'</p>';
+        return false;   
+    }
+}
+</script>
+<form onsubmit="return Convert()">
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Amount to be Converted</label><br>
+      <input type="text"  id="Money"  class="form-control"  placeholder="Enter amount">
+      <small id="Help" class="form-text text-muted">The Amount to be Converted</small>
+    </div>
+    <div class="form-group">
+      <label for="unitPer">Per Unit</label>
+      <input type="text" class="form-control"  id="unitPer" placeholder="Per unit">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <br>
+  <br>
+  <div>
+  <span id='display'></span>
+  </div>
+  </div>
+  </body> 
+  </html>
